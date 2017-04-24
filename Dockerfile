@@ -1,8 +1,8 @@
 FROM alpine:3.4
 
-ADD beeso_linux /app
-ADD plugins /app
+ADD beeso_linux /
+ADD plugins /plugins
 
 EXPOSE 8080
 
-CMD ["/app/beeso_linux"]
+CMD /beeso_linux

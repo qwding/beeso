@@ -5,7 +5,7 @@ set -e
 NS=reg.yunpro.cn/
 VERSION=${VERSION:-latest}
 REPO=dingqiwei/beeso
-NAME=castnet
+NAME=beeso
 INSTANCE=1
 PORTS="-p 8080:8080"
 
@@ -22,13 +22,13 @@ case "$1" in
 	    docker push ${NS}${REPO}:${VERSION}
         ;;
     exec)
-	    docker exec -it openresty_openresty_1 /bin/sh
+	    docker exec -it ${NAME} /bin/sh
         ;;
     pull)
 	    docker pull ${NS}${REPO}:${VERSION}
         ;;
     shell)
-	    docker run --rm --name ${NAME}-${INSTANCE} -i -t ${PORTS} ${VOLUMES} ${ENV} ${NS}${REPO}:${VERSION} /bin/bash
+	    docker run --rm --name ${NAME}-${INSTANCE} -i -t ${PORTS} ${VOLUMES} ${ENV} ${NS}${REPO}:${VERSION} /bin/sh
         ;;
     run)
         echo docker run --rm --name ${NAME}-${INSTANCE} ${PORTS} ${VOLUMES} ${ENV} ${NS}${REPO}:${VERSION}
