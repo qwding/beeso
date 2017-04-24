@@ -17,7 +17,7 @@ type Body struct {
 	file string
 }
 
-func (c *RegistorController) POST() {
+func (c *RegistorController) Post() {
 	fmt.Println("in post")
 	body := Body{}
 	err := json.Unmarshal(c.Ctx.Input.RequestBody, &body)
