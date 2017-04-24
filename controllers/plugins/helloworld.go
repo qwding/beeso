@@ -1,4 +1,4 @@
-package plugins
+package main
 
 // // No C code needed.
 import "C"
@@ -14,5 +14,5 @@ func Get() {
 }
 
 func Post() {
-	fmt.Println("hello world! ",, Data.Ctx.Input.Method())
+	fmt.Println("hello world! ", Data.Ctx.Input.Method())
 }
