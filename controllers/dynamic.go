@@ -25,7 +25,7 @@ func (c *DynamicController) Router() {
 
 	p, err := plugin.Open(file)
 	if err != nil {
-		panic(err)
+		c.Abort("404")
 	}
 	data, err := p.Lookup("Data")
 	if err != nil {
@@ -41,7 +41,7 @@ func (c *DynamicController) Router() {
 		c.Abort("404")
 	}
 
-	resp, err := run.(func()(string,error))()
+	resp, err := run.(func() (string, error))()
 	if err != nil {
 		c.Data["json"] = "Error:" + err.Error()
 		c.ServeJSON()
