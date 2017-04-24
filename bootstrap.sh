@@ -9,14 +9,18 @@ NAME=beeso
 INSTANCE=1
 PORTS="-p 8080:8080"
 
+
+#so
+#go build -v -buildmode=plugin -o plugins/hello.so controllers/plugins/helloworld.go
+
 cd `dirname $0`
 echo "image: ${NS}${REPO}:${VERSION}"
 case "$1" in
     build)
 	    docker build -t ${NS}${REPO}:${VERSION} .
         ;;
-    build)
-        go build beeso.go
+    binary)
+        GOOS=linux GOARCH=amd64 go build beeso.go
         ;;
     push)
 	    docker push ${NS}${REPO}:${VERSION}

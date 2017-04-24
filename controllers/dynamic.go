@@ -24,12 +24,12 @@ func (c *DynamicController) Router() {
 
 	p, err := plugin.Open(file)
 	if err != nil {
-		fmt.Println("error:",err)
+		fmt.Println("error open:",err)
 		c.Abort("404")
 	}
 	data, err := p.Lookup("Data")
 	if err != nil {
-		fmt.Println("error:",err)
+		fmt.Println("error lookup:",err)
 		panic(err)
 	}
 
@@ -39,7 +39,7 @@ func (c *DynamicController) Router() {
 
 	run, err := p.Lookup(c.Ctx.Input.Method())
 	if err != nil {
-		fmt.Println("error:",err)
+		fmt.Println("error lookup:",err)
 		c.Abort("404")
 	}
 

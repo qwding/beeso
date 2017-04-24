@@ -1,8 +1,9 @@
-FROM alpine
+FROM reg.yunpro.cn/dingqiwei/alpine
 
-ADD beeso_linux /
-ADD plugins /plugins
+ADD . /app
+
+WORKDIR /app
 
 EXPOSE 8080
 
-CMD /beeso_linux
+CMD ["/app/beeso"]
