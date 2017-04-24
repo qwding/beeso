@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine
 
 ADD beeso_linux /
 ADD plugins /plugins
