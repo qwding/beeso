@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"github.com/astaxie/beego"
-	"fmt"
 	"encoding/json"
+	"fmt"
+	"github.com/astaxie/beego"
 )
 
 var dynamincs = map[string]string{}
@@ -14,7 +14,7 @@ type RegistorController struct {
 
 type Body struct {
 	Path string
-	file string
+	File string
 }
 
 func (c *RegistorController) Post() {
@@ -26,12 +26,17 @@ func (c *RegistorController) Post() {
 		c.ServeJSON()
 		return
 	}
+	// fmt.Println("file:", body.File, "path:", body.Path, "path0:'", body.Path[0], body.Path[0] == '/')
 
-	if body.file == "" || body.Path == "" || body.Path[0] != '/' {
+	if body.File == "" || body.Path == "" || body.Path[0] != '/' {
 		c.Data["json"] = "File or path can not be null.  And path should be start with '/'."
 		c.ServeJSON()
 		return
 	}
 
-	dynamincs[body.Path] = body.file
+	dynamincs[body.Path] = body.File
+	c.Data["json"] = "success"
+	c.ServeJSON()
+	return
+
 }
