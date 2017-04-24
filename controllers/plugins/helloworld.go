@@ -9,10 +9,10 @@ import (
 
 var Data models.Data
 
-func Get() {
+func Get() (string, error) {
 	fmt.Println("hello world! ", Data.Ctx.Input.Method())
 }
 
-func Post() {
+func Post() (string, error) {
 	fmt.Println("hello world! ", Data.Ctx.Input.Method())
 }

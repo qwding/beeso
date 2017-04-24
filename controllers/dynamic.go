@@ -1,18 +1,16 @@
 package controllers
 
 import (
-	"github.com/astaxie/beego"
-	"strings"
-	"plugin"
-	"fmt"
 	"beeso/models"
+	"fmt"
+	"github.com/astaxie/beego"
+	"plugin"
+	"strings"
 )
 
 type DynamicController struct {
 	beego.Controller
 }
-
-
 
 //var uris = map[string]beego.ControllerInterface{}
 func (c *DynamicController) Router() {
@@ -35,7 +33,7 @@ func (c *DynamicController) Router() {
 	}
 
 	*data.(*models.Data) = models.Data{
-		Ctx:*c.Ctx,
+		Ctx: *c.Ctx,
 	}
 
 	run, err := p.Lookup(c.Ctx.Input.Method())
@@ -43,5 +41,14 @@ func (c *DynamicController) Router() {
 		c.Abort("404")
 	}
 
-	run.(func())()
+	resp, err := run.(func()(string,error))()
+	if err != nil {
+		c.Data["json"] = "Error:" + err.Error()
+		c.ServeJSON()
+		return
+	}
+
+	c.Data["json"] = resp
+	c.ServeJSON()
+	return
 }
