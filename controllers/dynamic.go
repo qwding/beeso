@@ -17,7 +17,6 @@ func (c *DynamicController) Router() {
 	uri := c.Ctx.Input.URI()
 	uri = strings.TrimPrefix(uri, "/dynamic")
 
-	fmt.Println("method:", c.Ctx.Input.Method())
 	file, ok := dynamincs[uri]
 	if !ok {
 		c.Abort("404")
@@ -25,10 +24,12 @@ func (c *DynamicController) Router() {
 
 	p, err := plugin.Open(file)
 	if err != nil {
+		fmt.Println("error:",err)
 		c.Abort("404")
 	}
 	data, err := p.Lookup("Data")
 	if err != nil {
+		fmt.Println("error:",err)
 		panic(err)
 	}
 
@@ -38,6 +39,7 @@ func (c *DynamicController) Router() {
 
 	run, err := p.Lookup(c.Ctx.Input.Method())
 	if err != nil {
+		fmt.Println("error:",err)
 		c.Abort("404")
 	}
 
