@@ -1,4 +1,4 @@
-FROM reg.yunpro.cn/dingqiwei/alpine
+FROM ubuntu:16.04
 
 ADD . /app
 
@@ -6,4 +6,4 @@ WORKDIR /app
 
 EXPOSE 8080
 
-CMD ["/app/beeso"]
+CMD ["/app/beeso_linux"]
