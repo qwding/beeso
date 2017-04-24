@@ -1,0 +1,34 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;beeso&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../wharfer_register" />
+      <root url="file://$PROJECT_DIR$/../leetcode" />
+      <root url="file://$PROJECT_DIR$/../beeapi" />
+      <root url="file://$PROJECT_DIR$/../alertCenter" />
+      <root url="file://$PROJECT_DIR$/../backfire" />
+      <root url="file://$PROJECT_DIR$/../revel_test" />
+      <root url="file://$PROJECT_DIR$/../test" />
+      <root url="file://$PROJECT_DIR$/../go_spider" />
+      <root url="file://$PROJECT_DIR$/../mail" />
+      <root url="file://$PROJECT_DIR$/../golang" />
+      <root url="file://$PROJECT_DIR$/../go_distributed_spider" />
+      <root url="file://$PROJECT_DIR$/../original_server" />
+      <root url="file://$USER_HOME$/termianl/gopkgs/src/gopkg.in" />
+      <root url="file://$USER_HOME$/termianl/gopkgs/src/github.com" />
+      <root url="file://$PROJECT_DIR$/../wharfer" />
+      <root url="file://$USER_HOME$/termianl/gopkgs/src/golang.org" />
+      <root url="file://$USER_HOME$/termianl/gopkgs/src/sourcegraph.com" />
+      <root url="file://$USER_HOME$/workspace/da/src/urlclassify" />
+      <root url="file://$PROJECT_DIR$/../Topspin" />
+      <root url="file://$PROJECT_DIR$/../dw_log_server" />
+      <root url="file://$PROJECT_DIR$/../distribute" />
+      <root url="file://$USER_HOME$/workspace/da/src/.idea" />
+      <root url="file://$PROJECT_DIR$/../dw_log" />
+      <root url="file://$PROJECT_DIR$/../beetest" />
+      <root url="file://$PROJECT_DIR$/../original" />
+      <root url="file://$PROJECT_DIR$/../go-testcode" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
